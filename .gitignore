@@ -1,4 +1,8 @@
 *.png
 *.jpg
+*.pkl
+*.pyc
+*.pyo
 .idea/
 .ipynb_checkpoints/
+__pycache__
