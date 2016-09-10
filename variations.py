@@ -34,7 +34,6 @@ class Var():
         self.make_pre()
         self.weight = 1
         self.unchanging = kwargs.get('unchanging', False)
-        #print("Initialized %s with %d parameters (%s)" % (func.__name__, num_params, ",".join("%f" % param for param in self.all_params)))
 
     def make_pre(self):
         if theanoify:

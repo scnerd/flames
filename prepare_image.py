@@ -17,17 +17,6 @@ def prepare_image(condensed, **condensed_args):
     rgb = condensed[:,:,:-1]
     alph = alph + 1
 
-    # Some pixels have never had a point land in them, which causes computational issues later
-    # Create and store a mask of all such pixels so they can be corrected as needed
-    #mask = condensed == 0
-    #mask = np.prod(mask, axis=2)
-    #mask = np.logical_not(np.stack([mask] * 4, axis=2))
-    #if np.any(mask):
-    #    condensed[mask] = condensed[mask] - np.min(condensed[mask])
-    #condensed[~mask] = 0
-    #mask[:,:,:-1] |= True
-    #condensed[~mask] = 1
-
     # Scale colors by log(alpha)/alpha
     color_scale = np.log(alph) / alph
     rgb = rgb * color_scale

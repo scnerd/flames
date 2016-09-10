@@ -26,7 +26,6 @@ class Music():
         # sqrt of the mean exp, to give high values more impact, but not outrageously much
         binned = [[np.sqrt(np.mean(np.exp(row[a:b]))/10) for a, b in edges] for row in tqdm(ffts)]
         binned = np.array(binned)
-        #binned[np.isnan(binned)] = 0
 
         self.smoothed_all = np.array([binned[max(0, i-3):i+3, :].mean(axis=0) for i in range(len(binned))])
 

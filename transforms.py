@@ -41,14 +41,6 @@ class Transform():
 
         print("Initialized transform: %s" % ", ".join(str(var) for var in self.variations))
 
-#     def __call__(self, x, y):
-#         num_fs = len(self.variations)
-#         f_choices = np.random.choice(range(num_fs), p=self.weights, size=x.shape[0])
-#         for f in range(num_fs):
-#             sel = f_choices == f
-#             x[sel], y[sel] = self.variations[f](x[sel], y[sel])
-#         return x, y
-
     def __str__(self):
         return "Transform<%s>" % (";".join(str(var) for var in self.variations))
 

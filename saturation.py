@@ -1,6 +1,9 @@
 # Skip over this, I've just put this here to get it out of the relevant code
 # These functions are purely image modifications to bring out more color
 # They have nothing to do with the interesting parts of rendering the fractal
+from args import *
+import numpy as np
+
 
 def saturate(condensed, **condensed_args):
     '''
@@ -92,7 +95,6 @@ def theano_saturate(t_condensed, **condensed_args):
     '''
     Boost the saturation of image x by x^(1/saturation)
     '''
-    import theano
     import theano.tensor as T
     saturation = make_get(condensed_args)('saturation')
     contrast = make_get(condensed_args)('contrast')

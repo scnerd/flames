@@ -1,9 +1,5 @@
 import numpy as np
-import scipy as sc
-import scipy.misc
-import scipy.ndimage
-import scipy.interpolate
-import matplotlib.pyplot as plt
+
 
 class RotaryFloat():
     def __init__(self, init_value=None):
